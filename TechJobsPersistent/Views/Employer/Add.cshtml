@@ -1,13 +1,22 @@
-﻿<h1>Add New Employer</h1>
+﻿@using TechJobsPersistent.ViewModels;
+@model AddEmployerViewModel;
+
+
+<h1>Add New Employer</h1>
+@*https://education.launchcode.org/csharp-web-development/chapters/aspdotnet-model-validation/studio.html?highlight=asp
+*@
 
 <form asp-controller="Employer" asp-action="ProcessAddEmployerForm" method="post">
     <div class="form-group">
-        <label>Employer Name</label>
-        <input />
+        <label asp-for="Name" >Employer Name</label>
+        <input asp-for="Name"/>
+        <span asp-validation-for="Name"></span>
     </div>
+    
     <div class="form-group">
-        <label>Employer Location</label>
-        <input />
+        <label asp-for="Location">Employer Location</label>
+        <input asp-for="Location" />
+        <span asp-validation-for="Location"></span>
     </div>
     <input type="submit" value="Submit" />
 </form>
