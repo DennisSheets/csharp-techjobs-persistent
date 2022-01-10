@@ -43,7 +43,7 @@ namespace TechJobsPersistent.Controllers
                     Name = addEmployerViewModel.Name,
                     Location = addEmployerViewModel.Location
                 };
-                context.Add(employer);
+                context.Employers.Add(employer);
                 context.SaveChanges();
                 return Redirect("Index");
             }
