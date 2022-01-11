@@ -20,5 +20,8 @@ namespace TechJobsPersistent.Data
             modelBuilder.Entity<JobSkill>()
                 .HasKey(j => new { j.JobId, j.SkillId });
         }
+
+        //  dotnet ef migrations add InitialMigration
+        //  dotnet ef database update
     }
 }

@@ -47,7 +47,7 @@ namespace TechJobsPersistent.Controllers
                 context.SaveChanges();
                 return Redirect("Index");
             }
-            return View(addEmployerViewModel);
+            return View("add",addEmployerViewModel);
         }
 
         public IActionResult About(int id)

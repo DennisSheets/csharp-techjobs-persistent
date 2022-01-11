@@ -10,6 +10,9 @@ AND TABLE_NAME = 'jobs' ;
 
 --Part 2
 
+SELECT name
+FROM employers
+WHERE location ="St. Louis City"
 
 
 

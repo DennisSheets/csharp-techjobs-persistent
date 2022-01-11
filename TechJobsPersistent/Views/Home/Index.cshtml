@@ -7,7 +7,7 @@
 <div class="text-center">
     <h1 class="display-4">Welcome to TechJobs!</h1>
 
-
+    <p><a asp-controller="Skill" asp-action="Add">Add Skill</a></p>
     <p><a asp-controller="Employer" asp-action="Add">Add Employer</a></p>
     <p><a asp-controller="Employer" asp-action="Index">Employer Index</a></p>
 
@@ -25,12 +25,14 @@ else
 {
     <table class="table">
         <tr>
+            <th>ID</th>
             <th>Position Name</th>
             <th>Employer</th>
         </tr>
         @foreach (Job job in Model)
         {
             <tr>
+                <td>@job.Id</td>
                 <td><a asp-controller="Home" asp-action="Detail" asp-route-id="@job.Id">@job.Name</a></td>
                 <td>@job.Employer.Name</td>
             </tr>
