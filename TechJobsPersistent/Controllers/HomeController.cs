@@ -47,7 +47,7 @@ namespace TechJobsPersistent.Controllers
                     Name = addJobViewModel.Name,
                     EmployerId = addJobViewModel.EmployerId,
                 };
-                context.Jobs.Add(newJob);
+                
                 
 
                 if (selectedSkills.Length > 0)
@@ -64,7 +64,7 @@ namespace TechJobsPersistent.Controllers
                     };
                 };
 
-               
+                context.Jobs.Add(newJob);
                 context.SaveChanges();
                 return Redirect("Index");
             };
