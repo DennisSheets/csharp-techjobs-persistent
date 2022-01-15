@@ -2,7 +2,7 @@
 @model AddJobViewModel
 <h1>Add a Job</h1>
 
-<form asp-controller="Home" asp-action="ProcessAddJobForm" method="post">
+<form asp-controller="Home">
     
     <div class="form-group">
         <label asp-for="Name">Name</label>
@@ -18,10 +18,10 @@
     
     <div class="form-group">
         <label>Required Skills for this job: </label><a asp-controller="Skill" asp-action="Add">   Add new Skills</a><br/>
-        @for(int i =0;i < @Model.Skills.Count(); i++)
+        @foreach(var skill in @Model.Skills)
         {
             <label>
-                <input type="checkbox" name="selectedSkills" value="@Model.Skills[i].Value"/>  @Model.Skills[i].Text
+                <input type="checkbox" name="selectedSkills" value="@skill.Id"/>  @skill.Name
             </label><br>
         }
     </div>
