@@ -10,10 +10,11 @@ using TechJobsPersistent.ViewModels;
 using TechJobsPersistent.Data;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TechJobsPersistent.Controllers
 {
-    public class HomeController : Controller
+        public class HomeController : Controller
     {
         private JobDbContext context;
 
@@ -28,7 +29,7 @@ namespace TechJobsPersistent.Controllers
 
             return View(jobs);
         }
-
+        [Authorize]
         [HttpGet]
         public IActionResult AddJob()
         {
